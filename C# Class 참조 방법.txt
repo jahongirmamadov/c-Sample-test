@@ -1,0 +1,4 @@
+1. 프로젝트 만들기
+
+2. 프로젝트 우 클릭 - 추가 - 기존항목 - MXP3.0 - ExAPI - Lib - C#
+    - MXP_EasyClass.cs, MXP_SoftMotion.cs 링크로  추가(추가버튼 우측 아래 화살표 클릭)
