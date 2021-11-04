@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76D568F4-05AB-447F-AAB9-4B4C152CE3C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdvancedSample</RootNamespace>
+    <AssemblyName>AdvancedSample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Lib\C#\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Lib\C#\MXP_EasyClass.cs">
+      <Link>MXP_EasyClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Lib\C#\MXP_SoftMotion.cs">
+      <Link>MXP_SoftMotion.cs</Link>
+    </Compile>
+    <Compile Include="Form\Form_MultiCCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_MultiCCC.Designer.cs">
+      <DependentUpon>Form_MultiCCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_CAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_CAM.Designer.cs">
+      <DependentUpon>Form_CAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_COM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_COM.Designer.cs">
+      <DependentUpon>Form_COM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_DirectCommand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_DirectCommand.Designer.cs">
+      <DependentUpon>Form_DirectCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Gear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_Gear.Designer.cs">
+      <DependentUpon>Form_Gear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_Group.Designer.cs">
+      <DependentUpon>Form_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_IO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_IO.Designer.cs">
+      <DependentUpon>Form_IO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Monitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_Monitoring.Designer.cs">
+      <DependentUpon>Form_Monitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Parameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_Parameter.Designer.cs">
+      <DependentUpon>Form_Parameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_PDO_ETParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_PDO_ETParam.Designer.cs">
+      <DependentUpon>Form_PDO_ETParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_PLCInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_PLCInterface.Designer.cs">
+      <DependentUpon>Form_PLCInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_ProfileMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_ProfileMove.Designer.cs">
+      <DependentUpon>Form_ProfileMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_SingleAxis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_SingleAxis.Designer.cs">
+      <DependentUpon>Form_SingleAxis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_TouchProb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_TouchProb.Designer.cs">
+      <DependentUpon>Form_TouchProb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_UnitChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_UnitChange.Designer.cs">
+      <DependentUpon>Form_UnitChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_SpinMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_SpinMove.Designer.cs">
+      <DependentUpon>Form_SpinMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_FeedBackSensor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_FeedBackSensor.Designer.cs">
+      <DependentUpon>Form_FeedBackSensor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form\Form_System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_System.Designer.cs">
+      <DependentUpon>Form_System.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\Form_FeedBackSensor.resx">
+      <DependentUpon>Form_FeedBackSensor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_MultiCCC.resx">
+      <DependentUpon>Form_MultiCCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_CAM.resx">
+      <DependentUpon>Form_CAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_COM.resx">
+      <DependentUpon>Form_COM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_DirectCommand.resx">
+      <DependentUpon>Form_DirectCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_Gear.resx">
+      <DependentUpon>Form_Gear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_Group.resx">
+      <DependentUpon>Form_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_IO.resx">
+      <DependentUpon>Form_IO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_Monitoring.resx">
+      <DependentUpon>Form_Monitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_Parameter.resx">
+      <DependentUpon>Form_Parameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_PDO_ETParam.resx">
+      <DependentUpon>Form_PDO_ETParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_PLCInterface.resx">
+      <DependentUpon>Form_PLCInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_ProfileMove.resx">
+      <DependentUpon>Form_ProfileMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_SingleAxis.resx">
+      <DependentUpon>Form_SingleAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_SpinMove.resx">
+      <DependentUpon>Form_SpinMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_TouchProb.resx">
+      <DependentUpon>Form_TouchProb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_UnitChange.resx">
+      <DependentUpon>Form_UnitChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Form\Form_System.resx">
+      <DependentUpon>Form_System.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
